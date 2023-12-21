@@ -15,7 +15,9 @@ function searchByName(firstName, lastName, customers) {
     while (lowerIndex <= upperIndex) {
       const index = Math.floor((upperIndex + lowerIndex) / 2);
 
-      const comparison = compare(firstName, lastName, customers);
+      const customerAtIndex = customers[index].lastName;
+      const comparison = compare(lastName, customerAtIndex);
+      // console.log(customerAtIndex, lastName, comparison);
 
       if (comparison > 0) {
         lowerIndex = index + 1;
